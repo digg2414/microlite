@@ -1,0 +1,30 @@
+secret_key_base: I8qV_-LOz8h4J6nmzoJdMjzf2EE-_rww6z6JqDFXwWE
+port: 3000
+name: microlite
+
+logging:
+  severity: debug
+  colorize: true
+  filter:
+    - password
+    - confirm_password
+    
+host: 0.0.0.0
+port_reuse: false
+process_count: 1
+# ssl_key_file:
+# ssl_cert_file:
+redis_url: "redis://localhost:6379"
+database_url: postgres://anon:magisTrate$417*862&48@localhost:5432/micro_test
+auto_reload: false
+
+session:
+  key: amber.session
+  store: signed_cookie
+  expires: 0
+
+smtp:
+  enabled: false
+
+secrets:
+  description: Store your development secrets credentials and settings here.

@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <title>jazz using Amber</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/dist/main.bundle.css">
+    <link rel="apple-touch-icon" href="/favicon.png">
+    <link rel="icon" href="/favicon.png">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link href="~/assets/stylesheets/output.css" rel="stylesheet">
+    <h1 class="text-3xl font-bold underline">
+    Hello world!
+  </h1>
+  </head>
+  <body>
+   <%= render(partial: "layouts/shared/_nav.ecr") %>
+    <div class="container-fluid">
+      <%- flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>" role="alert">
+          <%= flash[key] %>
+        </div>
+      <%- end %>
+
+      <div class="main">
+        <%= content %>
+      </div>
+    </div>
+
+    <script src="/dist/main.bundle.js"></script>
+
+    <%- if Amber.settings.auto_reload? -%><script src="/js/client_reload.js"></script><%- end -%>
+  </body>
+</html>
